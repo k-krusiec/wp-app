@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+.joke {
+  width: 30vw;
+  padding: 20px;
+  margin: 10px;
+
+  background-color: $gray;
+  border-radius: 5px;
+}
+
+.selected {
+  position: relative;
+  background: darken($gray, 30%);
+  &:after {
+    content: '';
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $red;
+    border-radius: 5px;
+  }
+}
+
+.logo {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transition: 0.5s;
+}
+
+.logo-hidden {
+  transform: translate(100%, 100%);
+}
